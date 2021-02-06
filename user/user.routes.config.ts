@@ -1,7 +1,7 @@
 import { CommonRoutesConfig } from '../common';
 import express from 'express';
 
-export class UsersRoutes extends CommonRoutesConfig {
+export class UserRoutes extends CommonRoutesConfig {
   constructor(app: express.Application) {
     super(app, 'UserRoutes');
   }
@@ -15,7 +15,7 @@ export class UsersRoutes extends CommonRoutesConfig {
         res.status(200).send('Users');
       });
 
-    this.app.route('/users/:userId')
+    this.app.route('/user/:userId')
       .all((req: express.Request, res: express.Response, next: express.NextFunction) => {
         next();
       })

@@ -7,7 +7,7 @@ import cors from 'cors';
 import debug from 'debug';
 
 import { CommonRoutesConfig } from './common';
-import { UsersRoutes } from './users';
+import { UserRoutes } from './user';
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
@@ -27,7 +27,7 @@ app.use(expressWinston.logger({
   )
 }));
 
-routes.push(new UsersRoutes(app));
+routes.push(new UserRoutes(app));
 
 app.use(expressWinston.errorLogger({
   transports: [
